@@ -12,20 +12,17 @@ spring:
     sampler:
       probability: 1.0
   cloud:
+    kubernetes:
+      config:
+        enabled: true
+      discovery:
+        enabled: true
+        all-namespaces: true
     gateway:
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
-        predicates:
-          - name: Path
-            args:
-              pattern: /${servicename}/**
-        filters:
-          - name: RewritePath
-            args:
-              regexp: /${servicename}/(?<remaining>.*)
-              replacement: /$\{remaining}
 #      routes:
 #      - id: cambio-service
 #        uri: lb://cambio-service
