@@ -17,7 +17,7 @@ public class ApiGatewayConfiguration {
 						  .uri("http://httpbin.org:80"))
 					  .route(p -> p.path("/cambio-service/**").uri("lb://cambio-service"))
 					  .route(p -> p.path("/book-service/**").uri("lb://book-service"))
-					  .route("teste", p -> p.path("/teste/**").uri("http://teste:8100"))
+					  .route("teste", p -> p.path("/teste/*").uri("http://teste:8100"))
 					  .build();
 	}
 }
