@@ -11,13 +11,6 @@ spring:
   sleuth:
     sampler:
       probability: 1.0
-  cloud:
-    kubernetes:
-      config:
-        enabled: true
-      discovery:
-        enabled: true
-        all-namespaces: true
     gateway:
       discovery:
         locator:
